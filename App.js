@@ -9,7 +9,7 @@ import MeteorScreen from './screens/MeteorScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
       <HomeScreen/>
       {/* <IsLocationScreen/> */}
       {/* <MeteorScreen/> */}

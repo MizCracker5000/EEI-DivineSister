@@ -10,19 +10,43 @@ const HomeScreen =()=>{
     >
       <SafeAreaView style={styles.droidSafeAreView}/>
       <View style={styles.titleBar}>
-        <Text>Rastreador de la EEI</Text>
-         </View> 
+        {/* agreamos el titulo de la app */}
+        <Text style={styles.titleText}>Rastreador de la EEI</Text>
+      </View>
+       {/*agregamos un TouchableOpacity  */}
+      <TouchableOpacity style={styles.routeCard} >
+        <Text>Divine Location of EEI </Text>
+      </TouchableOpacity>
+      {/* agregamos otro boton  */}
+      <TouchableOpacity style={styles.routeCard}>
+        <Text>Unholy Meteors</Text>
+      </TouchableOpacity>
     </View>
   )
 
 }
-
+// agregando estilos
 const styles = StyleSheet.create({
   container:{
     flex:1,
   }, 
   droidSafeAreView:{
     marginTop: Platform.OS === "android" ? StatusBar.currentHeight:0
+  },
+  routeCard:{
+    flex: 0.25,
+    marginLeft: 50, 
+    marginRight: 50, 
+    marginTop: 50,
+    borderRadius:15,
+    background: "pink",
+  },
+  titleText:{
+    fontSize: 35,
+    fontWeight: "bold",
+    color: "black",
+    marginTop: 75,
+    paddingLeft: 30,
   }
 })
 
