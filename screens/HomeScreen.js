@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 // Diego crea su primer componente
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   // aqui va todo lo que va a tener mi componente
   return (
     <View style={styles.container}>
@@ -25,7 +25,10 @@ const HomeScreen = () => {
           <Text style={styles.titleText}>Rastreador de la EEI</Text>
         </View>
         {/*agregamos un TouchableOpacity  */}
-        <TouchableOpacity style={styles.routeCard}>
+        <TouchableOpacity
+          style={styles.routeCard}
+          onPress={() => props.navigation.navigate("Localización")}
+        >
           <Text style={styles.routeText}>Divine Location of EEI </Text>
           <Text style={styles.knowMore}>{"Saber mas ---->"}</Text>
           <Image
@@ -34,8 +37,16 @@ const HomeScreen = () => {
           ></Image>
         </TouchableOpacity>
         {/* agregamos otro boton  */}
-        <TouchableOpacity style={styles.routeCard}>
+        <TouchableOpacity
+          style={styles.routeCard}
+          onPress={() => props.navigation.navigate("Meteoros")}
+        >
           <Text style={styles.routeText}>Unholy Meteors</Text>
+          <Text style={styles.knowMore}>{"Saber mas ---->"}</Text>
+          <Image
+            source={require("../assets/meteor_icon.png")}
+            style={styles.iconImage}
+          ></Image>
         </TouchableOpacity>
       </ImageBackground>
     </View>
